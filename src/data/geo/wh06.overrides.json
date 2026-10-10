@@ -1,0 +1,249 @@
+{
+  "$comment": [
+    "Hand-made inputs for scripts/fetch-geo.mjs (PRD addendum WH-06).",
+    "zones.file is the user's labelled map of the MPM Learning Center compound (9 Oct 2026). Its outlines are the authority for what belongs to the compound and where each part ends; the whole compound is shown, nothing is clipped.",
+    "Frames. Grid frame: metres from grid.origin (the Google Maps pin), turned by grid.rotationDeg so the compound is square to the axes (x toward east, z toward south). Polygons, points and ridge axes in this file are in the grid frame. Local frame (what the app uses): the grid turned so frame.dockFacing points to +z, with frame.anchor at the site centre. 'yard' is in the local frame.",
+    "Heights and colours are observations by eye from a satellite top view and the user's Google 3D screenshot, used only as a visual reference (no imagery is stored). Estimates until confirmed (PRD Q4).",
+    "Main building: the long hall inside 'gudang part utama' (not in OSM), plus a new hall on the vacant land west of it (user, 9 Oct 2026). Five virtual docks are on the hall's east wall at its south end, where the field was; one more is the covered dock beside Gudang part 1, in the yard by the main office (10 Oct 2026). Trucks enter from the north road past the security post (pos satpam) and drive down the road between the main office and the helmet store."
+  ],
+  "site": "WH-06",
+  "query": {
+    "lat": -7.3907092,
+    "lon": 112.7516072,
+    "radius": 250
+  },
+  "grid": {
+    "origin": {
+      "lat": -7.3907092,
+      "lon": 112.7516072
+    },
+    "rotationDeg": -9.6247
+  },
+  "frame": {
+    "dockFacing": "east",
+    "anchor": [92.9, -48]
+  },
+  "yards": [
+    [-200, -15, -105, 31],
+    [-105, -15, -86, 11],
+    [27, -76, 54, -10]
+  ],
+  "base": {
+    "margin": 6,
+    "clamp": {
+      "x1": 191
+    }
+  },
+  "drop": {
+    "266287936": "Jalan Rajawali: drawn as the site's own road outside the fence (user, 10 Oct 2026)",
+    "590640835": "service road from the main office's drive to the east edge; the drop-off loop leaves to the truck road instead (user, 10 Oct 2026)",
+    "1116083652": "stub of 590640835 at the east edge (user, 10 Oct 2026)",
+    "669568300": "stands where the new main hall goes (user, 9 Oct 2026)",
+    "669568314": "small building on the truck route to Gudang part 1 (user, 9 Oct 2026)"
+  },
+  "main": {
+    "id": "x-main-hall",
+    "note": "Long hall with roof vents, west wall at x 49.4, east wall on the zone line (77.9), to the zone's south line. Its north end stops at z -75: the stretch up to the main office is a road where trucks unload for 'gudang part 1' (user, 9 Oct 2026).",
+    "poly": [
+      [49.4, -75],
+      [77.9, -75],
+      [77.9, 141],
+      [49.4, 141]
+    ],
+    "height": 11,
+    "wall": "#E9ECF0",
+    "roof": "#D3D8DF",
+    "roofShape": "gable",
+    "rise": 2.5,
+    "ridgeAxis": "z",
+    "sections": [
+      {
+        "from": -75,
+        "to": -5,
+        "roof": "#C9CED6"
+      },
+      {
+        "from": -5,
+        "to": 30,
+        "roof": "#F1F3F6"
+      },
+      {
+        "from": 30,
+        "to": 141,
+        "roof": "#D3D8DF"
+      }
+    ]
+  },
+  "zones": {
+    "file": "src/data/geo/mpm.geojson",
+    "Kantor utama": {
+      "name": "Kantor utama",
+      "kind": "building",
+      "height": 10,
+      "wall": "#EEF1F5",
+      "roof": "#C7CCD4",
+      "roofShape": "gable",
+      "ridges": 3,
+      "ridgeAxis": "z",
+      "rise": 2
+    },
+    "tempat penitipan helm": {
+      "name": "Tempat penitipan helm",
+      "kind": "building",
+      "height": 8,
+      "wall": "#E6E9ED",
+      "roof": "#B5BAC2",
+      "roofShape": "gable",
+      "ridgeAxis": "z",
+      "rise": 2.2
+    },
+    "pakir motor": {
+      "name": "Parkir motor",
+      "note": "The paved lot east of the main office, from the office's north line to its south wall, stopping short of the driveway (Esri imagery and OSM shed 669568310, 10 Oct 2026).",
+      "kind": "open",
+      "fill": "#D9E0EC",
+      "trees": 6
+    },
+    "pos satpam": {
+      "name": "Pos satpam",
+      "note": "The yard around the three guard buildings. The north edge steps out to take in the booth by the road (OSM 669568302, Esri imagery, 10 Oct 2026).",
+      "kind": "open",
+      "fill": "#D7EFE6",
+      "trees": 10
+    },
+    "gudang part 1": {
+      "name": "Gudang part 1",
+      "note": "The whole block from the west hall to the yard by the main office, back to the main hall, with no gaps between the halls. The Safety Riding Center building (OSM 669568315) and the planted strip beside it are inside it now (user, 10 Oct 2026).",
+      "kind": "building",
+      "height": 9,
+      "wall": "#E8EBEF",
+      "roof": "#F2F4F6",
+      "roofShape": "gable",
+      "ridges": 4,
+      "ridgeAxis": "z",
+      "rise": 1.8
+    },
+    "gudang part utama": {
+      "name": "Gudang part utama",
+      "kind": "lot",
+      "labelAt": [63.6, 70]
+    },
+    "lapangan": {
+      "name": "Lapangan",
+      "kind": "removed",
+      "note": "Removed: its ground is the truck yard of the main docks (user, 9 Oct 2026)."
+    },
+    "tmpat penitioan helm": {
+      "name": "Tempat penitipan helm",
+      "kind": "building",
+      "height": 4.5,
+      "wall": "#ECE6E0",
+      "roof": "#A9806A"
+    },
+    "kantin dan learning study mpm": {
+      "name": "Kantin dan learning study MPM",
+      "note": "Drawn in the app from public/models/kantin-mpm.glb (scripts/build-kantin-glb.mjs); this outline gives its label and keeps forklifts clear of it.",
+      "kind": "building",
+      "height": 7,
+      "wall": "#F3F2EE",
+      "roof": "#C4BDB0"
+    }
+  },
+  "areas": [
+    {
+      "id": "entrance-road",
+      "note": "Road from the security post down the east side of the main hall to the canteen, between the main office / main hall and the helmet stores (user, 9 Oct 2026).",
+      "kind": "paved",
+      "poly": [
+        [82.6, -251],
+        [95.6, -251],
+        [95.6, 47],
+        [82.6, 47]
+      ]
+    },
+    {
+      "id": "gudang-1-apron",
+      "note": "Road and loading area between the main office and the main hall, where trucks unload for 'gudang part 1' (user, 9 Oct 2026).",
+      "kind": "paved",
+      "poly": [
+        [45.5, -102.6],
+        [82.6, -102.6],
+        [82.6, -75],
+        [45.5, -75]
+      ]
+    },
+    {
+      "id": "gudang-1-turn",
+      "note": "Road edge widened where trucks for 'gudang part 1' pull over before reversing in.",
+      "kind": "paved",
+      "poly": [
+        [95.6, -95],
+        [98.4, -95],
+        [98.4, -56],
+        [95.6, -56]
+      ]
+    }
+  ],
+  "buildings": {
+    "669568302": {
+      "note": "Guard post.",
+      "height": 3.2,
+      "wall": "#F3F2EE",
+      "roof": "#D8433A"
+    },
+    "669568303": {
+      "note": "Guard post.",
+      "height": 3.2,
+      "wall": "#F3F2EE",
+      "roof": "#C4BDB0"
+    },
+    "669568305": {
+      "note": "Guard post.",
+      "height": 3.2,
+      "wall": "#F3F2EE",
+      "roof": "#C4BDB0"
+    },
+    "669568310": {
+      "note": "Long roofed motorcycle shed in the parking area.",
+      "height": 3.5,
+      "wall": "#E4E7EC",
+      "roof": "#9FB0C8"
+    },
+    "669568314": {
+      "note": "Small building at the hall's north end.",
+      "height": 5,
+      "wall": "#ECEFF3",
+      "roof": "#D3D8DF"
+    }
+  },
+  "trees": {
+    "note": "Planted strip seen on imagery along the service road behind Gudang part 1. The strip beside the Safety Riding Center building is inside Gudang part 1 now (10 Oct 2026).",
+    "points": [
+      [-9.08, -28.75],
+      [-9.08, -22.75],
+      [-9.08, -16.75],
+      [-9.08, -10.75],
+      [-9.08, -4.75],
+      [-9.08, 1.25]
+    ]
+  },
+  "extra": [
+    {
+      "id": "x-main-hall-west",
+      "note": "Part of 'gudang part utama' on the vacant land west of the long hall, from the Safety Riding Center building to the zone's south line; the compound fence stays as it is (user, 9 Oct 2026).",
+      "poly": [
+        [-6.8, 16],
+        [49.4, 16],
+        [49.4, 141],
+        [-6.8, 141]
+      ],
+      "height": 10,
+      "wall": "#E9ECF0",
+      "roof": "#D3D8DF",
+      "roofShape": "gable",
+      "ridges": 3,
+      "ridgeAxis": "z",
+      "rise": 2.2
+    }
+  ]
+}
