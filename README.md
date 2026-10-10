@@ -1,5 +1,8 @@
 # WareTrack
 
+![Uploading Screenshot 2026-10-10 170143.png…]()
+
+
 3D warehouse operations dashboard, built from [prd.md](prd.md) and its addendum [prd-mpm-learning-center.md](prd-mpm-learning-center.md). Five sites in a fictional city plus WH-06, MPM Learning Center Sidoarjo, drawn at full scale from real map data in its own district west of the city. A live simulation of trucks, forklifts and pallets runs at every site, with an inspector for every object you click.
 
 ## Run
